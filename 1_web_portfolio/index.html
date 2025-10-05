@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="fanta.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">Luka</a>
+      <nav>
+        <a target="_blank" href="https://github.com/">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a target="_blank" href="">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="intro-header">
+          <h1>Hello there I'm Luka</h1>
+          <p>I'm a web developer and designer</p>
+        </div>
+        <h5 class="intro-description">
+          I'm a web developer and designer with a passion for creating beautiful
+          and functional websites. I have a strong background in HTML, CSS, and
+          JavaScript, and I'm always looking to learn new technologies and
+          improve my skills. My goal is to create websites that are not only
+          visually appealing but also user-friendly and accessible to all users.
+          Whether you're looking for a simple portfolio site or a complex web
+          application, I'm here to help bring your vision to life.
+        </h5>
+        <div class="links-container">
+          <a target="_blank" href="mailto:juricluka783@gmail.com">
+            <i class="fa-solid fa-arrow-right"></i>Email me
+          </a>
+          <a target="_blank" href="https://github.com/">
+            <i class="fa-brands fa-github"></i>Github
+          </a>
+        </div>
+        <div id="play-game">
+          <button onclick="playGame()">Let's play a game</button>
+        </div>
+        <div class="color-div">
+          <h4>Pick a color</h4>
+          <p id="color-message" style="display: none">
+            Great choice! The page theme has been updated.
+          </p>
+          <input
+            type="color"
+            id="color-picker"
+            onchange="changeColor()"
+            value="#0084ff"
+          />
+          <button id="reset-btn" style="display: none" onclick="resetColor()">
+            Reset Theme
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <div class="skills-container">
+          <div class="skill-card frontend">
+            <div class="skill-header">
+              <div class="skill-icon">💻</div>
+              <h3 class="skill-title">Frontend</h3>
+            </div>
+            <p class="skill-description">
+              Creating engaging user interfaces and seamless user experiences
+              with modern web technologies.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Next.js</span>
+            </div>
+          </div>
+
+          <div class="skill-card backend">
+            <div class="skill-header">
+              <div class="skill-icon">⚙️</div>
+              <h3 class="skill-title">Backend</h3>
+            </div>
+            <p class="skill-description">
+              Building robust server-side applications and APIs with scalable
+              architecture and database management.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express</span>
+              <span class="skill-tag">MongoDB</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <div class="cards-grid">
+          <div class="project-card">
+            <div class="project-content">
+              <p class="project-date">July 15, 2024</p>
+              <h4>E-Commerce Platform</h4>
+              <div class="tech-list">
+                <div class="card-button-secondary">
+                  <p>NEXT.JS</p>
+                </div>
+                <div class="card-button-secondary">
+                  <p>MONGODB</p>
+                </div>
+                <div class="card-button-secondary">
+                  <p>STRIPE</p>
+                </div>
+              </div>
+              <p class="project-description">
+                A full-stack e-commerce platform featuring user authentication,
+                product management, shopping cart functionality, and secure
+                payment processing. Built with Next.js for optimal performance
+                and SEO, integrated with MongoDB for scalable data storage, and
+                Stripe for secure payment handling. Includes admin dashboard for
+                inventory management.
+              </p>
+              <div class="project-links">
+                <a target="_blank" href="/">
+                  <i class="fa-solid fa-external-link"></i>Live Demo
+                </a>
+                <a target="_blank" href="/">
+                  <i class="fa-brands fa-github"></i>Github
+                </a>
+              </div>
+            </div>
+            <div class="img-div">
+              <img
+                class="big-img"
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop"
+                alt="E-commerce platform screenshot"
+              />
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <p class="project-date">September 3, 2024</p>
+              <h4>Task Management App</h4>
+              <div class="tech-list">
+                <div class="card-button-secondary">
+                  <p>REACT</p>
+                </div>
+                <div class="card-button-secondary">
+                  <p>EXPRESS</p>
+                </div>
+                <div class="card-button-secondary">
+                  <p>JWT</p>
+                </div>
+              </div>
+              <p class="project-description">
+                A collaborative task management application with real-time
+                updates, team collaboration features, and project tracking.
+                Users can create projects, assign tasks, set deadlines, and
+                monitor progress through an intuitive dashboard. Features
+                drag-and-drop functionality, file attachments, and notification
+                system for enhanced productivity.
+              </p>
+              <div class="project-links">
+                <a target="_blank" href="/">
+                  <i class="fa-solid fa-external-link"></i>Live Demo
+                </a>
+                <a target="_blank" href="/">
+                  <i class="fa-brands fa-github"></i>Github
+                </a>
+              </div>
+            </div>
+            <div class="img-div">
+              <img
+                class="big-img"
+                src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop"
+                alt="Task management app screenshot"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Designed & Built by <a href="https://github.com/">Luka</a> • View the
+        source code on
+        <a target="_blank" href="https://github.com/">Github</a>
+      </p>
+    </footer>
+    <script>
+      // This is where we create game//
+
+      const body = document.querySelector("body");
+      const colorInput = document.getElementById("color-picker");
+      const colorDiv = document.querySelector(".color-div");
+      const hiddenText = document.querySelector(".color-div p");
+      const resetBtn = document.getElementById("reset-btn");
+      const playBtn = document.getElementById("play-game");
+
+      //funkcije
+
+      function playGame() {
+        colorDiv.style.display = "block";
+        playBtn.style.display = "none";
+      }
+
+      function changeColor() {
+        const selectedColor = colorInput.value;
+        body.style.backgroundColor = selectedColor;
+        resetBtn.style.display = "block";
+        hiddenText.style.display = "block";
+        colorInput.style.display = "none";
+      }
+
+      function resetColor() {
+        body.style.backgroundColor = "white";
+        playBtn.style.display = "block";
+        resetBtn.style.display = "none";
+        hiddenText.style.display = "none";
+        colorInput.style.display = "block";
+        colorInput.value = "#0084ff"; // Reset to default color
+      }
+    </script>
+  </body>
+</html>
