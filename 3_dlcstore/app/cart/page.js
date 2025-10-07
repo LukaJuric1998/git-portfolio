@@ -55,6 +55,18 @@ export default function CartPage() {
     }
   }
 
+  const getImageForProduct = (productName) => {
+    const imageMap = {
+      "Medieval Dragon Month Planner": "planner.jpeg",
+      '"Ancient Weed': "ReactJS.jpeg",
+      "Runic Bookmark Set": "Firebase.jpeg",
+      "Celestial Desk Mat": "NextJS.jpeg",
+      "Enchanted Notebook": "docker.jpeg",
+    };
+
+    return imageMap[productName] || "NextJS.jpeg";
+  };
+
   return (
     <section className="cart-section">
       <h2>Your Cart</h2>
@@ -64,17 +76,12 @@ export default function CartPage() {
           const itemData = cart[item];
           const itemQuantity = itemData?.quantity;
 
-          const imgName =
-            itemData.name === "Medieval Dragon Month Planner"
-              ? "planner"
-              : itemData.name
-                  .replaceAll(" Sticker.png", "")
-                  .replaceAll(" ", "_");
-          const imgUrl = "/low_res/" + imgName + ".jpeg";
+          const imgName = getImageForProduct(itemData.name);
+          const imgUrl = "/low_res/" + imgName;
 
           return (
             <div key={itemIndex} className="cart-item">
-              <img src={imgUrl} alt={imgName + "-img"} />
+              <img src={imgUrl} alt={itemData.name + "-img"} />
               <div className="cart-item-info">
                 <h3>{itemData.name}</h3>
                 <p>

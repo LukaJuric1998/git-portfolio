@@ -10,6 +10,18 @@ export default function Products(props) {
 
   if (!planner || safeStickers.length === 0) return null;
 
+  // Map product names to image filenames
+  const getImageForProduct = (productName) => {
+    const imageMap = {
+      '"Ancient Weed': "/ReactJS.jpeg",
+      "Runic Bookmark Set": "/Firebase.jpeg",
+      "Celestial Desk Mat": "/NextJS.jpeg",
+      "Enchanted Notebook": "/docker.jpeg",
+    };
+
+    return imageMap[productName] || "/low_res/NextJS.jpeg";
+  };
+
   return (
     <>
       {/* Planner Section */}
@@ -72,15 +84,13 @@ export default function Products(props) {
           {safeStickers.map((sticker) => {
             const stickerName = sticker.name || "Unnamed";
             const key = sticker.id || sticker.default_price || stickerName;
+            const imageName = getImageForProduct(stickerName);
+
             return (
               <div key={key} className="sticker-card">
                 <img
-                  src="/low_res/NextJS.jpeg"
-                  alt="NextJS sticker"
-                  onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = "/low_res/placeholder.jpeg";
-                  }}
+                  src={`/low_res/${imageName}`}
+                  alt={`${stickerName} sticker`}
                 />
                 <div className="sticker-info">
                   <p className="text-medium">{stickerName}</p>
